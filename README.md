@@ -28,7 +28,7 @@ The last eruption happened in 1548, which deposited enough material to create a 
 
 It is potentially the most dangerous volcano in Europe due to the size of past eruptions and the number of people who would be affected. 
 More than half a million people live in the area of the caldera designated as "Red area", i.e. the area that would be immediately dangerous in the case of an eruption, and that would need to be evacuated beforehand. 
-Further 840 thousand people live in the "Yellow area", the area that might be affected by an eruption, who also may need to be evacuated after the eruption has started. An unlikely larger eruption than what than the current evacuation plan anticipates may impact even more people. 
+Further 840 thousand people live in the "Yellow area", the area that might be affected by an eruption, who may also be forced to evatuate after the eruption has started. A larger eruption than what than the current evacuation plan anticipates may impact even more people. 
 
 ## Bradyseism
 
