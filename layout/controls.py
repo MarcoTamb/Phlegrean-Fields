@@ -18,7 +18,7 @@ controls=html.Div([
                max=max_days, 
                step=1, 
                minRange=7,
-               updatemode = 'drag',
+               className='slider_shortbottom'
         ),
     html.P(id='first-date-text', children='First:'),
     html.P(id='last-date-text', children='Last:'),
@@ -35,7 +35,7 @@ controls=html.Div([
                 {"value": 4, "label": "4"},
             ],
             step=0.1, 
-            updatemode = 'drag',
+            className='slider'
             #tooltip={"template": "minimum magnitudo {value}", "placement": "top", "always_visible": False}
         ),
     html.P(),
@@ -46,7 +46,7 @@ controls=html.Div([
                step=0.1, 
                value=[-7.5, 0], 
                minRange=0.5,
-               updatemode = 'drag',
+               className='slider'
         ),
 ], className='controlsbox')
 
