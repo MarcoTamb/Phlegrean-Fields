@@ -1,10 +1,10 @@
-# Phlegraean Fields Earthquake dashboard
+# Phlegraean Fields Earthquakes dashboard
 
 The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situated near Naples, Italy. It is also extremely close to where my family lives. This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the area, scraping data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. 
 
 ## Instructions 
 
-To run locally, clone the repository, install dependencies in *requirements.txt*, and run *main.py*. If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
+To run locally, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
 
 ## Screenshots
 
