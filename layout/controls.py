@@ -4,15 +4,14 @@ from utils.constants import MIN_DATE
 from datetime import date, timedelta
 max_days=int((date.today()-MIN_DATE).days)
 controls=html.Div([
-    # html.H5("Map Type:"),
     dmc.SegmentedControl(
             id="map-type",
-            data=['3D-Map', 'Heatmap', 'Vertical X', 'Vertical Y'],
+            data=['3D-Map', 'Heatmap', 'Vertical E/W', 'Vertical N/S'],
             value='3D-Map',
             fullWidth=True
         ),
     html.P(),
-    html.H5("Filter out older than:"),
+    html.H5("Dates:"),
     dmc.RangeSlider(id="last-date",
                value=[max_days-365, max_days], 
                min=0, 
@@ -60,3 +59,4 @@ def update_date(slider_value):
     first_date=(MIN_DATE+timedelta(days=slider_value[0])).strftime('%Y-%m-%d')
     last_date=(MIN_DATE+timedelta(days=slider_value[1])).strftime('%Y-%m-%d')
     return f'First date :{first_date}', f'Last date :{last_date}'
+

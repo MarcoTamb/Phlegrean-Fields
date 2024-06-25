@@ -44,18 +44,29 @@ pl_grey =[[0.0, 'rgb(0, 0, 0)'],
     [1.0, 'rgb(255, 255, 255)']]
 
 surfcolor = np.fliplr(img)
-map_trace=go.Surface(go.Surface(x=xx, y=yy, z=zz, surfacecolor=surfcolor, colorscale=pl_grey, showscale=False, opacity = 0.6))
-
+map_trace=go.Surface(go.Surface(x=xx, 
+                                y=yy, 
+                                z=zz, 
+                                surfacecolor=surfcolor, 
+                                colorscale=pl_grey, 
+                                showscale=False, 
+                                opacity = 0.6,
+                                hovertemplate = 'E/W offset (km): %{x}<br>N/S offset (km): %{y}<br>%Depth (km): %{z}<extra></extra>'
+                                ))
 # default blank page
 blank = go.Figure(go.Scatter(x=[], y = []))
 blank.update_layout(template = None)
 blank.update_xaxes(showgrid = False, showticklabels = False, zeroline=False)
 blank.update_yaxes(showgrid = False, showticklabels = False, zeroline=False)
-
+blank.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+        })
 
 
 chart_wrapper = html.Div( 
     [
+        html.H6(id='description', className='chart-title'),
         html.Div(
             dcc.Graph(
                 id='3d-chart',
@@ -89,18 +100,39 @@ def update_chart(chart_type, min_magnitudo, last_date_slider, depth, refresh_dat
     if chart_type=='3D-Map':
         chart = three_d_chart(chart_data)
         chart.update_layout(
-            uirevision='true'
+            uirevision='true',
+            font=dict(
+                color="white"
+            )
         )
+        chart.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+        })
     elif chart_type=='Heatmap':
         chart = heatmap(chart_data)
         chart.update_layout(
-            uirevision='true'
+            uirevision='true',
+            font=dict(
+                color="white"
+            )
         )
-    elif chart_type in ['Vertical X', 'Vertical Y']:
-        chart = vertical(chart_data, chart_type[-1])
+        chart.update_layout({
+            'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+        })
+    elif chart_type in ['Vertical E/W', 'Vertical N/S']:
+        chart = vertical(chart_data, chart_type[-3:])
         chart.update_layout(
-            uirevision='true'
+            uirevision='true',
+            font=dict(
+                color="white"
+            )
         )
+        chart.update_layout({
+            'plot_bgcolor': 'rgba(128, 128, 128, 10)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+        })
     else:
         chart = []
     
@@ -108,7 +140,7 @@ def update_chart(chart_type, min_magnitudo, last_date_slider, depth, refresh_dat
     return chart
 def three_d_chart(chart_data, camera_status=dict(
             up=dict(x=-0, y=1, z=1),
-            center=dict(x=0, y=0, z=0),
+            center=dict(x=0, y=0, z=-1),
             eye=dict(x=0, y=10, z=5)
             )):
     fig=px.scatter_3d(chart_data, x='x_position', y='y_position', z='Depth/Km', size='Magnitude', color='Magnitude', range_color=[0, 5], labels={
@@ -141,7 +173,7 @@ def heatmap(chart_data):
                                 lat=float(LATITUDE), 
                                 lon=float(LONGITUDE),
                                 ), 
-                            zoom=13,
+                            zoom=12,
                             mapbox_style="open-street-map",
                             labels={
                                 'x_position':'E/W offset (km)', 
@@ -150,12 +182,15 @@ def heatmap(chart_data):
                                 'Magnitude':'Magnitude'
                             }
                             )
+    fig.update_layout(
+        margin=dict(l=20, r=20, t=20, b=20),
+    )
     return fig
 
 def vertical(chart_data, axis_choice):
-    if axis_choice=='X':
+    if axis_choice=='E/W':
         x_element='x_position'
-    elif axis_choice=='Y':
+    elif axis_choice=='N/S':
         x_element='y_position'
     else:
         return []
@@ -170,6 +205,26 @@ def vertical(chart_data, axis_choice):
                         'Depth/Km':'Depth (km)', 
                         'Magnitude':'Magnitude'
                     })
-    fig.update_xaxes(range=[-5, 5])
+    fig.update_xaxes(range=[-6, 6])
     fig.update_yaxes(range=[-10, 0])
+    fig.update_layout(
+        margin=dict(l=20, r=20, t=20, b=20),
+    )
     return fig 
+
+
+@callback(
+    Output('description', 'children'),
+    Input('map-type', 'value'),
+)
+def update_description(type):
+    if type=='3D-Map':
+        return "Interactive 3D map of all the earthquakes' epicenters"
+    elif type=='Heatmap':
+        return "Heatmap showing the earthquakes' epicenters' positions on the surface"
+    elif type=='Vertical E/W':
+        return "Vertial view showing the earthquakes' epicenters' depth vs the East-West axis"
+    elif type=='Vertical N/S':
+        return "Vertial view showing the earthquakes' epicenters' depth vs the  North-South axis"
+    else:
+        return 'This should never be displayed'
