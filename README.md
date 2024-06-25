@@ -10,15 +10,15 @@ To run locally, clone the repository, install dependencies in *requirements.txt*
 
 #### 3D map
 
-![3D-view]https://github.com/username/repo-name/blob/main/screenshots/3d-view.png)
+![3D-view](https://github.com/username/repo-name/blob/main/screenshots/3d-view.png)
 
 #### Heatmap
 
-![Heatmap]https://github.com/username/repo-name/blob/main/screenshots/heatmap.png)
+![Heatmap](https://github.com/username/repo-name/blob/main/screenshots/heatmap.png)
 
 #### About 
 
-![About]https://github.com/username/repo-name/blob/main/screenshots/about.png)
+![About](https://github.com/username/repo-name/blob/main/screenshots/about.png)
 
 ## The volcano
 
