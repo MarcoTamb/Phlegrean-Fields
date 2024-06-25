@@ -4,7 +4,7 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 ## Instructions 
 
-To run locally, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
+To run locally, clone the repository, install all the dependencies in *requirements.txt*, set the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components) and run *main.py*. You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
 
 ## Screenshots
 
