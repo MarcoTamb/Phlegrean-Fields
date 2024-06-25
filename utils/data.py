@@ -29,8 +29,8 @@ def get_x(coordinates):
     else:
         return - distance.distance(coordinates, (coordinates[0], LONGITUDE)).kilometers
 
-#earthquake_data=query_earthquakes()
-earthquake_data=pd.read_csv('query.csv', sep='|', parse_dates=['Time'])
+earthquake_data=query_earthquakes()
+#earthquake_data=pd.read_csv('query.csv', sep='|', parse_dates=['Time'])
 earthquake_data['Depth/Km']=-earthquake_data['Depth/Km']
 earthquake_data['latitude_longitude'] = list(zip(earthquake_data.Latitude, earthquake_data.Longitude)) 
 earthquake_data['x_position'] = earthquake_data['latitude_longitude'].apply(get_x)
