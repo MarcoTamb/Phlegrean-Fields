@@ -14,7 +14,7 @@ x_axis_range=[10,-10]
 y_axis_range=[10,-10]
 
 # create trace for the map of the area
-original = io.imread('C:\\Users\\Marco\\Documents\\Repository\\Phlegrean Fields Dashboard\\assets\\map.png')[:,:,:3] #https://github.com/empet/Datasets/blob/master/Images/mountains.jpg
+original = io.imread('assets/map.png')[:,:,:3] #https://github.com/empet/Datasets/blob/master/Images/mountains.jpg
 img=rgb2gray(original)
 img=rescale(img, 0.7, anti_aliasing=True)
 
