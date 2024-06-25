@@ -20,9 +20,9 @@ controls=html.Div([
                minRange=7,
                updatemode = 'drag',
         ),
-    html.P(id='first-date-text', children='First date'),
-    html.P(id='last-date-text', children='Last date'),
-    html.H5("Minimum Magnitudo:"),
+    html.P(id='first-date-text', children='First:'),
+    html.P(id='last-date-text', children='Last:'),
+    html.H5("Minimum Magnitude:"),
     dmc.Slider(id='min-magnitudo', 
                value=0, 
                min=0, 
@@ -58,5 +58,5 @@ controls=html.Div([
 def update_date(slider_value):
     first_date=(MIN_DATE+timedelta(days=slider_value[0])).strftime('%Y-%m-%d')
     last_date=(MIN_DATE+timedelta(days=slider_value[1])).strftime('%Y-%m-%d')
-    return f'First date :{first_date}', f'Last date :{last_date}'
+    return f'First: {first_date}', f'Last: {last_date}'
 
