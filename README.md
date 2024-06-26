@@ -6,7 +6,7 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 To run locally, clone the repository, install all the dependencies in *requirements.txt*, set the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components) and run *main.py*.
 
-If using Mamba/Conda, to set env variables I suggest to create a separate environment and use the following commands, assuming you are in the project folder: (replace mamba with conda if using conda)
+If using [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)/[Conda](https://docs.conda.io/en/latest/), to set env variables I suggest to create a separate environment and use the following commands, assuming you are in the project folder: (replace mamba with conda if using conda)
 
     mamba create -n phlegrean
     mamba activate phlegrean 
