@@ -13,7 +13,12 @@ If using [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-insta
     mamba install --yes --file requirements.txt
     mamba env config vars set REACT_VERSION=18.2.0
     python main.py
-  
+    
+From the second time onwards you only need to run:
+
+    mamba activate phlegrean
+    python main.py
+
 You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
 
 ## Screenshots
