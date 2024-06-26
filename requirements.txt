@@ -2,6 +2,5 @@ dash
 dash-mantine-components
 dash-bootstrap-components
 pandas
-datetime
 geopy
 scikit-image
