@@ -8,10 +8,10 @@ To run locally, clone the repository, install all the dependencies in *requireme
 
 If using Mamba/Conda, to set env variables I suggest to create a separate environment and use the following commands: (replace mamba with conda if using conda)
 
-  mamba create -n phlegrean
-  mamba activate phlegrean 
-  mamba install --yes --file requirements.txt
-  mamba env config vars set REACT_VERSION=18.2.0
+    mamba create -n phlegrean
+    mamba activate phlegrean 
+    mamba install --yes --file requirements.txt
+    mamba env config vars set REACT_VERSION=18.2.0
   
 You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
 
