@@ -4,3 +4,4 @@ dash-bootstrap-components
 pandas
 geopy
 scikit-image
+gunicorn
