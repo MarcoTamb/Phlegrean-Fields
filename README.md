@@ -4,6 +4,8 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 ## Instructions 
 
+You can access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/).
+
 To run locally, clone the repository, install all the dependencies in *requirements.txt*, set the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components) and run *main.py*.
 
 If using [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)/[Conda](https://docs.conda.io/en/latest/), to set env variables and install packages I suggest to create a separate environment and use the following commands, assuming you are in the project folder: (replace mamba with conda if using conda)
@@ -19,7 +21,7 @@ From the second time onwards you only need to run:
     mamba activate phlegrean
     python main.py
 
-You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
+You can then access the dashboard on *[localhost:8050](http://localhost:8050)*. If somehow you ever want to deploy this to the internet yourself, do not forward port 8050 directly to the internet; you can follow [these instructions](https://dash.plotly.com/deployment) on the Dash documentation website to avoid potential vulnerabilities, although there are many other ways to deploy it. (see e.g. [this article](https://medium.com/@ahossack07/create-and-deploy-plotly-dash-apps-to-the-internet-for-free-49ebca9633da))
 
 ## Screenshots
 
