@@ -144,8 +144,8 @@ def three_d_chart(chart_data, camera_status=dict(
             eye=dict(x=0, y=10, z=5)
             )):
     fig=px.scatter_3d(chart_data, x='x_position', y='y_position', z='Depth/Km', size='Magnitude', color='Magnitude', range_color=[0, 5], labels={
-        'x_position':'E/W offset (km)', 'y_position':'N/S offset (km)', 'Depth/Km':'Depth (km)', 'Magnitude':'Magnitude'
-    })
+        'x_position':'E/W offset (km)', 'y_position':'N/S offset (km)', 'Depth/Km':'Depth (km)', 'Magnitude':'Magnitude', 'Time':'Time', '#EventID':'EventID',
+    }, hover_data=["Time"])
 
     fig.update_layout(
             scene = dict(
@@ -179,8 +179,11 @@ def heatmap(chart_data):
                                 'x_position':'E/W offset (km)', 
                                 'y_position':'N/S offset (km)', 
                                 'Depth/Km':'Depth (km)', 
-                                'Magnitude':'Magnitude'
-                            }
+                                'Magnitude':'Magnitude',
+                                'Time':'Time', 
+                                '#EventID':'EventID',
+                            }, 
+                            hover_data=["Time"]
                             )
     fig.update_layout(
         margin=dict(l=20, r=20, t=20, b=20),
@@ -203,8 +206,12 @@ def vertical(chart_data, axis_choice):
                         'x_position':'E/W offset (km)', 
                         'y_position':'N/S offset (km)', 
                         'Depth/Km':'Depth (km)', 
-                        'Magnitude':'Magnitude'
-                    })
+                        'Magnitude':'Magnitude',
+                        'Time':'Time', 
+                        '#EventID':'EventID',
+                        }, 
+                   hover_data=["Time"]
+                   )
     fig.update_xaxes(range=[-6, 6])
     fig.update_yaxes(range=[-10, 0])
     fig.update_layout(
