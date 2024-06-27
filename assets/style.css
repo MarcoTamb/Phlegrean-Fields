@@ -1,3 +1,7 @@
+
+a{
+    text-decoration: none;
+}
 .main-chart{
     height: 85vh;
     width: 99%;
@@ -45,4 +49,10 @@
 .slider_shortbottom{
     margin-top: 20px;
     margin-bottom: 10px;
+}
+.image_centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
