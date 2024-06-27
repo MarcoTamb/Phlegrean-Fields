@@ -21,7 +21,7 @@ app.layout=dmc.MantineProvider(
     children = app_layout 
 )
 app.title = "Phlegraean Fields Earthquakes"
-
+server=app.server
 
 if __name__ == '__main__':
     print('Running app')
