@@ -23,7 +23,7 @@ Bradyseism is a geological phenomenon associated with gradual ground uplift or s
 This phenomena can persist for millennia in between eruptions, and each uplift event is normally accompanied by thousands of small to moderate earthquakes.
 The word derives from the ancient Greek words βραδύς bradús, meaning "slow", and σεισμός seismós meaning "movement". '''
 
-markdown_text_3 = '''The inflation and deflation of this caldera is especially well documented due to its seaside location and a long history of habitation and construction in the area. The town of Pozzuoli features the Roman Macellum of Pozzuoli in which three marble columns show bands of boreholes left by marine Lithophaga molluscs. These occur up to 7 metres up the columns, showing how bradyseism in the area lowered the land to at least this depth under the sea and subsequently raised it again. Furthermore, a number of archeological ruins can be found underwater near the town of Baia.
+markdown_text_3 = '''The inflation and deflation of this caldera is especially well documented due to its seaside location and a long history of habitation and construction in the area. The town of Pozzuoli features the Roman Macellum of Pozzuoli in which three marble columns show bands of boreholes left by marine molluscs. These occur up to 7 metres up the columns, showing how bradyseism in the area lowered the land to at least this depth under the sea and subsequently raised it again. Furthermore, a number of archeological ruins can be found underwater near the town of Baia.
 
 This dashboard tracks the earthquakes in the area, scraping data from INGV, the Italian research institute monitoring the activity of the Volcano. 
 '''
