@@ -21,7 +21,7 @@ From the second time onwards you only need to run:
     mamba activate phlegrean
     python main.py
 
-You can then access the dashboard on *[localhost:8050](http://localhost:8050)* If somehow you ever want to deploy this to the internet, make sure to follow [these instructions](https://dash.plotly.com/deployment) on the Dash website to avoid potential vulnerabilities. 
+You can then access the dashboard on *[localhost:8050](http://localhost:8050)*. If somehow you ever want to deploy this to the internet yourself, do not forward port 8050 directly to the internet; you can follow [these instructions](https://dash.plotly.com/deployment) on the Dash documentation website to avoid potential vulnerabilities, although there are many other ways to deploy it. (see e.g. [this article](https://medium.com/@ahossack07/create-and-deploy-plotly-dash-apps-to-the-internet-for-free-49ebca9633da))
 
 ## Screenshots
 
