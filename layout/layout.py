@@ -52,7 +52,7 @@ app_layout = html.Div(
                             dbc.Row(
                                 [
                                     dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
-                                    dbc.Col(dbc.NavbarBrand("Phlegrean Fields Earthquakes", className="ms-2")),
+                                    dbc.Col(dbc.NavbarBrand("Phlegrean Fields Earthquakes", className="ms-1")),
                                 ],
                                 align="center",
                                 className="g-0",

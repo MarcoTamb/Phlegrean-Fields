@@ -3,9 +3,7 @@ a{
     text-decoration: none;
 }
 .main-chart{
-    height: 85vh;
-    width: 99%;
-    margin-right: 1%;
+    width: 100%;
 }
 .controlsbox{
     margin-left: 30px;
@@ -29,14 +27,20 @@ a{
     display: grid;
     }
 @media (min-width: 900px) {
-    .cards { 
+    .gridbox { 
         grid-template-columns: 3fr 8fr;
         grid-template-rows: 1fr;
+        grid-template-areas: "controls charts";
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
-    .controls { grid-area: 1 / 1 / 5 / 2; }
-    .charts { grid-area: 1 / 2 / 5 / 6; } 
+    .controls { grid-area: controls; }
+    .charts { grid-area: charts; } 
+    .main-chart{
+        height: 85vh;
+        width: 99%;
+        margin-right: 1%;
+    }
 }
 
 .chart-title {
