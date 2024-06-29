@@ -9,7 +9,7 @@ INGV_url=f'https://terremoti.ingv.it/events?starttime={start_date.strftime("%Y-%
 
 links=[
         html.A(
-                "Charts",
+                "Maps",
                 href='/',
                 className='links'
              ),
@@ -52,7 +52,7 @@ app_layout = html.Div(
                             dbc.Row(
                                 [
                                     dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
-                                    dbc.Col(dbc.NavbarBrand("Phlegrean Fields Earthquakes", className="ms-1")),
+                                    dbc.Col(dbc.NavbarBrand("Campi Flegrei Earthquakes", className="ms-1")),
                                 ],
                                 align="center",
                                 className="g-0",

@@ -2,13 +2,13 @@ from dash import register_page, html, dcc
 
 register_page(__name__, path='/about')
 
-markdown_text_1='''## Phlegraean Fields 
+markdown_text_1='''## Campi Flegrei 
 
-This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the Phlegrean Fields area. The Phlegrean Fields, also known as Campi Flegrei, are a large caldera near Naples, Italy. It gets data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. 
+This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the Campi Flegrei area. Campi Flegrei, also known as Phlegrean Fields, are a large caldera near Naples, Italy. It gets data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. It is one of the most dangerous volcanoes in the world
 
 #### The volcano
 
-The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situated near Naples, Italy. This caldera, spanning approximately 13 kilometers, is part of an active volcanic complex formed around 39,000 years ago following a massive eruption. The Phlegrean Fields consist of 24 craters and volcanic edifices, some of which are underwater. The most famous feature within this caldera is the Solfatara crater, which emits jets of steam and sulfurous gases, a visible reminder of the region's volatile nature. The area is characterized by its geothermal activity, hot springs, and fumaroles, making it a significant location for both scientific research and tourism. It is part of the Campanian volcanic arc, which also includes the more famous Mount Vesuvius (resposible of the eruption that destroyed Pompeii in 79 AD), about 9 km (6 miles) east of Naples. The last eruption happened in 1548, which deposited enough material to create a new 132m tall hill, Monte Nuovo. '''
+Campi Flegrei, also known as Phlegrean Fields, is a large volcanic area situated near Naples, Italy. This caldera, spanning approximately 13 kilometers, is part of an active volcanic complex formed around 39,000 years ago following a massive eruption. The Phlegrean Fields consist of 24 craters and volcanic edifices, some of which are underwater. The most famous feature within this caldera is the Solfatara crater, which emits jets of steam and sulfurous gases, a visible reminder of the region's volatile nature. The area is characterized by its geothermal activity, hot springs, and fumaroles, making it a significant location for both scientific research and tourism. It is part of the Campanian volcanic arc, which also includes the more famous Mount Vesuvius (resposible of the eruption that destroyed Pompeii in 79 AD), about 9 km (6 miles) east of Naples. The last eruption happened in 1548, which deposited enough material to create a new 132m tall hill, Monte Nuovo. '''
 
 
 
