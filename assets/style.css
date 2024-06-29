@@ -6,8 +6,8 @@ a{
     width: auto;
 }
 .controlsbox{
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 15px;
 }
 .links{
@@ -28,7 +28,7 @@ a{
     }
 @media (min-width: 768px) {
     .gridbox { 
-        grid-template-columns: 3fr 8fr;
+        grid-template-columns: 7fr 16fr;
         grid-template-rows: 1fr;
         grid-template-areas: "controls charts";
         grid-column-gap: 30px;
@@ -40,6 +40,9 @@ a{
         height: 85vh;
         width: 99%;
         margin-right: 1%;
+    }
+    .controlsbox{
+        margin-top: 15px;
     }
 }
 
