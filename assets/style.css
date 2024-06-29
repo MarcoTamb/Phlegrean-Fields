@@ -3,11 +3,11 @@ a{
     text-decoration: none;
 }
 .main-chart{
-    width: 100%;
+    width: auto;
 }
 .controlsbox{
-    margin-left: 30px;
-    margin-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-top: 15px;
 }
 .links{
@@ -26,12 +26,12 @@ a{
 .gridbox {
     display: grid;
     }
-@media (min-width: 900px) {
+@media (min-width: 768px) {
     .gridbox { 
         grid-template-columns: 3fr 8fr;
         grid-template-rows: 1fr;
         grid-template-areas: "controls charts";
-        grid-column-gap: 0px;
+        grid-column-gap: 30px;
         grid-row-gap: 0px;
     }
     .controls { grid-area: controls; }
