@@ -27,14 +27,17 @@ a{
 
 .gridbox {
     display: grid;
-    grid-template-columns: 3fr 8fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     }
-    
-.controls { grid-area: 1 / 1 / 5 / 2; }
-.charts { grid-area: 1 / 2 / 5 / 6; } 
+@media (min-width: 900px) {
+    .cards { 
+        grid-template-columns: 3fr 8fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .controls { grid-area: 1 / 1 / 5 / 2; }
+    .charts { grid-area: 1 / 2 / 5 / 6; } 
+}
 
 .chart-title {
     text-align: center;
