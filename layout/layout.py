@@ -14,6 +14,11 @@ links=[
                 className='links'
              ),
         html.A(
+                "Statistics",
+                href='/stats',
+                className='links'
+             ),
+        html.A(
             "About",
             href='/about',
             className='links'
