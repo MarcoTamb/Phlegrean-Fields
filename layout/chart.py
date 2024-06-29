@@ -8,7 +8,7 @@ import numpy as np
 from skimage import io
 from skimage.color import rgb2gray
 from skimage.transform import rescale
-from datetime import timedelta
+from datetime import timedelta, date
 
 x_axis_range=[10,-10]
 y_axis_range=[10,-10]
@@ -88,8 +88,8 @@ chart_wrapper = html.Div(
     Input('refresh', 'data'),
 )
 def update_chart(chart_type, min_magnitudo, last_date_slider, depth, refresh_data):
-    first_date=MIN_DATE + timedelta(days=last_date_slider[0])
-    last_date=MIN_DATE + timedelta(days=last_date_slider[1])
+    first_date=(date.today() - MIN_DATE ) + timedelta(days=last_date_slider[0])
+    last_date=(date.today() - MIN_DATE ) + timedelta(days=last_date_slider[1])
     chart_data = earthquake_data.copy()
     chart_data = chart_data[chart_data.Magnitude > min_magnitudo]
     chart_data = chart_data[chart_data.Time  > pd.to_datetime(first_date)]

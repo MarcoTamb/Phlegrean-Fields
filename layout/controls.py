@@ -2,7 +2,7 @@ from dash import html, callback, Input, Output
 import dash_mantine_components as dmc
 from utils.constants import MIN_DATE
 from datetime import date, timedelta
-max_days=int((date.today()-MIN_DATE).days)
+
 controls=html.Div([
     dmc.SegmentedControl(
             id="map-type",
@@ -13,9 +13,9 @@ controls=html.Div([
     html.P(),
     html.H5("Dates:"),
     dmc.RangeSlider(id="last-date",
-               value=[max_days-365, max_days], 
+               value=[int(MIN_DATE.days/2), MIN_DATE.days], 
                min=0, 
-               max=max_days, 
+               max=MIN_DATE.days, 
                step=1, 
                minRange=7,
                className='slider_shortbottom'
@@ -56,7 +56,7 @@ controls=html.Div([
     Input('last-date', 'value'),
 )
 def update_date(slider_value):
-    first_date=(MIN_DATE+timedelta(days=slider_value[0])).strftime('%Y-%m-%d')
-    last_date=(MIN_DATE+timedelta(days=slider_value[1])).strftime('%Y-%m-%d')
+    first_date=((date.today() - MIN_DATE)+timedelta(days=slider_value[0])).strftime('%Y-%m-%d')
+    last_date=((date.today() - MIN_DATE)+timedelta(days=slider_value[1])).strftime('%Y-%m-%d')
     return f'First: {first_date}', f'Last: {last_date}'
 

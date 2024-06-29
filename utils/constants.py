@@ -4,7 +4,7 @@ URL_MAIN='/'
 PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 GITHUB_URL= 'https://github.com/MarcoTamb/Phlegrean-Fields'
 
-MIN_DATE=date.today() - timedelta(weeks=104)
+MIN_DATE=timedelta(days=730)
 
 LATITUDE='40.8270'
 LONGITUDE='14.1420'

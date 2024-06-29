@@ -3,7 +3,9 @@ import dash_bootstrap_components as dbc
 from utils.constants import URL_MAIN, GITHUB_URL, PLOTLY_LOGO, MIN_DATE, LATITUDE, LONGITUDE, MAX_DISTANCE_KM, UPDATE_SECONDS
 from datetime import date
 
-INGV_url=f'https://terremoti.ingv.it/events?starttime={MIN_DATE.strftime("%Y-%m-%d")}T00%3A00%3A00&endtime={date.today().strftime("%Y-%m-%d")}T23%3A59%3A59&minmag=-1&maxmag=10&mindepth=-10&maxdepth=1000&minversion=100&orderby=time-asc&lat={LATITUDE}&lon={LONGITUDE}&maxradiuskm={MAX_DISTANCE_KM}&format=text&limit=10000'
+start_date = date.today() - MIN_DATE 
+
+INGV_url=f'https://terremoti.ingv.it/events?starttime={start_date.strftime("%Y-%m-%d")}T00%3A00%3A00&endtime={date.today().strftime("%Y-%m-%d")}T23%3A59%3A59&minmag=-1&maxmag=10&mindepth=-10&maxdepth=1000&minversion=100&orderby=time-asc&lat={LATITUDE}&lon={LONGITUDE}&maxradiuskm={MAX_DISTANCE_KM}&format=text&limit=10000'
 
 links=[
         html.A(
