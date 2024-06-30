@@ -9,10 +9,12 @@ from dash import callback, Input, Output
 start_date = date.today() - MIN_DATE
 
 def query_earthquakes():
-    query=f'https://webservices.ingv.it/fdsnws/event/1/query?starttime={start_date.strftime("%Y-%m-%d")}T00%3A00%3A00&endtime={date.today().strftime("%Y-%m-%d")}T23%3A59%3A59&minmag=-1&maxmag=10&mindepth=-10&maxdepth=1000&orderby=time-asc&lat={LATITUDE}&lon={LONGITUDE}&maxradiuskm={MAX_DISTANCE_KM}&format=text' 
-    data_query=requests.get(query)
-    phlegrean_fields_earthquakes = pd.read_csv(StringIO(data_query.text), sep='|', parse_dates=['Time'])
-#    phlegrean_fields_earthquakes=pd.read_csv('query.csv', sep='|', parse_dates=['Time'])
+    try:
+        query=f'https://webservices.ingv.it/fdsnws/event/1/query?starttime={start_date.strftime("%Y-%m-%d")}T00%3A00%3A00&endtime={date.today().strftime("%Y-%m-%d")}T23%3A59%3A59&minmag=-1&maxmag=10&mindepth=-10&maxdepth=1000&orderby=time-asc&lat={LATITUDE}&lon={LONGITUDE}&maxradiuskm={MAX_DISTANCE_KM}&format=text' 
+        data_query=requests.get(query)
+        phlegrean_fields_earthquakes = pd.read_csv(StringIO(data_query.text), sep='|', parse_dates=['Time'])
+    except:
+       phlegrean_fields_earthquakes=pd.read_csv('query.csv', sep='|', parse_dates=['Time'])
 
     return phlegrean_fields_earthquakes
 
