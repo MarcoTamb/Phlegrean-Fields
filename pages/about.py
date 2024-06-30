@@ -4,7 +4,7 @@ register_page(__name__, path='/about')
 
 markdown_text_1='''## Campi Flegrei 
 
-This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the Campi Flegrei area. Campi Flegrei, also known as Phlegrean Fields, are a large caldera near Naples, Italy. It gets data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. It is one of the most dangerous volcanoes in the world
+Campi Flegrei, also known as Phlegrean Fields, are a large caldera near Naples, Italy.  It is one of the most dangerous volcanoes in the world. This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the Campi Flegrei area.  It gets data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano.
 
 #### The volcano
 
