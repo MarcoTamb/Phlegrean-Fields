@@ -1,6 +1,7 @@
 dash
 dash-mantine-components
 dash-bootstrap-components
+dash-iconify
 pandas
 geopy
 scikit-image

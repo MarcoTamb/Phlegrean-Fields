@@ -2,6 +2,7 @@ from dash import html, callback, Output, Input, State, page_container, dcc
 import dash_bootstrap_components as dbc
 from utils.constants import URL_MAIN, GITHUB_URL, PLOTLY_LOGO, MIN_DATE, LATITUDE, LONGITUDE, MAX_DISTANCE_KM, UPDATE_SECONDS, APP_TITLE
 from datetime import date
+from dash_iconify import DashIconify
 
 start_date = date.today() - MIN_DATE 
 
@@ -36,7 +37,7 @@ links=[
             className='links'
         ),
         dbc.NavItem(dbc.NavLink(
-                "GitHub",
+                [DashIconify(icon="ion:logo-github", height=25, style={'margin-right':'5px'}), "GitHub"],
                 href=GITHUB_URL,
                 className='links'
              )),
