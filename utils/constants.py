@@ -2,6 +2,7 @@ from datetime import date,timedelta
 URL_MAIN='/'
 # remove below when unused
 PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
+APP_TITLE="Bradyseism Monitor"
 GITHUB_URL= 'https://github.com/MarcoTamb/Phlegrean-Fields'
 
 MIN_DATE=timedelta(days=730)

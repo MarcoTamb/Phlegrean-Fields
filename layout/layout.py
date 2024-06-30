@@ -1,6 +1,6 @@
 from dash import html, callback, Output, Input, State, page_container, dcc
 import dash_bootstrap_components as dbc
-from utils.constants import URL_MAIN, GITHUB_URL, PLOTLY_LOGO, MIN_DATE, LATITUDE, LONGITUDE, MAX_DISTANCE_KM, UPDATE_SECONDS
+from utils.constants import URL_MAIN, GITHUB_URL, PLOTLY_LOGO, MIN_DATE, LATITUDE, LONGITUDE, MAX_DISTANCE_KM, UPDATE_SECONDS, APP_TITLE
 from datetime import date
 
 start_date = date.today() - MIN_DATE 
@@ -23,21 +23,18 @@ links=[
             href='/about',
             className='links'
         )),
-        dbc.NavItem(dbc.NavLink(
-            "INGV home",
-            href='https://www.ingv.it/',
+        dbc.DropdownMenu(
+            children=[
+                dbc.DropdownMenuItem("INGV websites", header=True),
+                dbc.DropdownMenuItem("INGV Home", href='https://www.ingv.it/'),
+                dbc.DropdownMenuItem("INGV Earthquakes", href=INGV_url),
+                dbc.DropdownMenuItem("INGV Monitoring", href='https://www.ov.ingv.it/index.php/monitoraggio-e-infrastrutture/bollettini-tutti'),
+            ],
+            nav=True,
+            in_navbar=True,
+            label=html.Span("INGV", style={'color':'var(--bs-nav-link-color)'}),
             className='links'
-        )),
-        dbc.NavItem(dbc.NavLink(
-            "INGV earthquakes",
-            href=INGV_url,
-            className='links'
-        )),
-        dbc.NavItem(dbc.NavLink(
-            "INGV monitoring",
-            href='https://www.ov.ingv.it/index.php/monitoraggio-e-infrastrutture/bollettini-tutti',
-            className='links'
-        )),
+        ),
         dbc.NavItem(dbc.NavLink(
                 "GitHub",
                 href=GITHUB_URL,
@@ -51,7 +48,7 @@ app_layout = html.Div(
         [
             dbc.NavbarSimple(
                 children=links,
-                brand=[html.Img(src=PLOTLY_LOGO, height="30px"), dbc.NavbarBrand("Campi Flegrei Earthquakes", className="ms-2")],
+                brand=[html.Img(src=PLOTLY_LOGO, height="30px"), dbc.NavbarBrand(APP_TITLE, className="ms-2")],
                 brand_href= '/',
                 color="dark",
                 dark=True,
