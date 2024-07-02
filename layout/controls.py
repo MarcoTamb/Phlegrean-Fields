@@ -13,7 +13,7 @@ controls=html.Div([
     html.P(),
     html.H5("Dates:"),
     dmc.RangeSlider(id="last-date",
-               value=[int(MIN_DATE.days/2), MIN_DATE.days], 
+               value=[int(MIN_DATE.days/10), MIN_DATE.days], 
                min=0, 
                max=MIN_DATE.days, 
                step=1, 
