@@ -4,7 +4,7 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 ## Instructions 
 
-You can access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/).
+You can access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/). (please be patient, it is very slow)
 
 To run locally, clone the repository, install all the dependencies in *requirements.txt*, set the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components) and run *main.py*.
 
