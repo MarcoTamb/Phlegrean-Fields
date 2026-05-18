@@ -3,12 +3,12 @@ from datetime import date, datetime, timedelta
 import pandas as pd
 from io import StringIO
 from geopy import distance
-from utils.constants import MIN_DATE, LATITUDE, LONGITUDE, MAX_DISTANCE_KM
+from utils.constants import MIN_DATE, LATITUDE, LONGITUDE, MAX_DISTANCE_KM, UPDATE_SECONDS
 from dash import callback, Input, Output
 
 start_date = date.today() - MIN_DATE
 
-rate_limit_delay=600
+rate_limit_delay=UPDATE_SECONDS
 last_query=datetime.now()-(timedelta(seconds=rate_limit_delay+5))
 print(last_query.strftime("%m %d %H-%M-%S"))
 
