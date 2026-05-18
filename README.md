@@ -6,6 +6,7 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 
 You can access the app, deployed on Plotly Cloud, [here](https://15e49cd3-9bf3-4462-a717-ca446f13893d.plotly.app/). (please be patient, can be slow)
+
 You can also access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/).
 
 To run locally, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. For some outdated dash versions it may be necessary to add the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components), but it should no longer be necessary.
