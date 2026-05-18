@@ -1,6 +1,6 @@
 # Phlegraean Fields Earthquakes dashboard
 
-The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situated near Naples, Italy. It is also extremely close to where my family lives. This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the area, scraping data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. 
+The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situated near Naples, Italy. Which is also close to where I grew up. This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the area, automatically scraping data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. 
 
 ## Instructions 
 
