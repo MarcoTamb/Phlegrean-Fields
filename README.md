@@ -4,16 +4,17 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 ## Instructions 
 
-You can access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/). (please be patient, it is very slow)
 
-To run locally, clone the repository, install all the dependencies in *requirements.txt*, set the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components) and run *main.py*.
+You can access the app, deployed on Plotly Cloud, [here](https://15e49cd3-9bf3-4462-a717-ca446f13893d.plotly.app/). (please be patient, can be slow)
+You can also access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/).
+
+To run locally, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. For some outdated dash versions it may be necessary to add the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components), but it should no longer be necessary.
 
 If using [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)/[Conda](https://docs.conda.io/en/latest/), to set env variables and install packages I suggest to create a separate environment and use the following commands, assuming you are in the project folder: (replace mamba with conda if using conda)
 
     mamba create -n phlegrean
     mamba activate phlegrean 
     mamba install --yes --file requirements.txt
-    mamba env config vars set REACT_VERSION=18.2.0
     python main.py
     
 From the second time onwards you only need to run:
