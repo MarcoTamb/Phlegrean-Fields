@@ -11,6 +11,8 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 
 You can access the live app deployed on Plotly Cloud **[here](https://faa06204-3bfd-4de8-bdac-24d810199848.plotly.app/)**. *(Note: The application runs on a free cloud tier and will enter hibernation after periods of inactivity. It may take 30–60 seconds to wake up and fetch fresh data from INGV on your first visit.)*
 
+You can also access the app, deployed on Heroku, [here](https://campiflegrei-644a6eb36dd0.herokuapp.com/). *(similar limitations)*
+
 ## Local Installation
 
 To run this application locally on your machine, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. 
