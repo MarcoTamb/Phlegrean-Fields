@@ -2,14 +2,37 @@
 
 The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situated near Naples, Italy. Which is also close to where I grew up. This interactive dashboard, built with [Dash](https://dash.plotly.com/), tracks the earthquakes in the area, automatically scraping data from [INGV](https://www.ingv.it/), the Italian research institute monitoring the activity of the Volcano. 
 
+## Tech Stack
+* **Framework:** Built entirely in Python using [Plotly Dash](https://dash.plotly.com/).
+* **Data Retrieval:** Live API scraping from INGV web services using `requests` and processed with `pandas`.
+* **Performance:** Server-side caching using `Flask-Caching` to respect API rate limits
+
 ## Instructions 
 
+You can access the live app deployed on Plotly Cloud **[here](https://faa06204-3bfd-4de8-bdac-24d810199848.plotly.app/)**. *(Note: The application runs on a free cloud tier and will enter hibernation after periods of inactivity. It may take 30–60 seconds to wake up and fetch fresh data from INGV on your first visit.)*
 
-You can access the app, deployed on Plotly Cloud, [here](https://faa06204-3bfd-4de8-bdac-24d810199848.plotly.app/). (please be patient, it can be slow - and I have not tested this extensively, if you encounter bugs let me know)
+## Local Installation
 
-To run locally, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. For some outdated dash versions it may be necessary to add the ENV variable REACT_VERSION=18.2.0 (for dash-mantine-components), but it should no longer be necessary.
+To run this application locally on your machine, clone the repository, install all the dependencies in *requirements.txt*, and run *main.py*. 
+You have two options for setting up your environment:
 
-If using [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)/[Conda](https://docs.conda.io/en/latest/), to set env variables and install packages I suggest to create a separate environment and use the following commands, assuming you are in the project folder: (replace mamba with conda if using conda)
+
+### Standard Python (pip)
+```bash
+# Create and activate a virtual environment
+python -m venv env
+source env/bin/activate  # On Windows use: env\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
+python main.py
+```
+
+### Mamba/Conda
+
+If using [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html)/[Conda](https://docs.conda.io/en/latest/), to set env variables and install packages I suggest to create a separate environment and use the following commands, assuming you are in the project folder: 
 
     mamba create -n phlegrean
     mamba activate phlegrean 
@@ -20,8 +43,12 @@ From the second time onwards you only need to run:
 
     mamba activate phlegrean
     python main.py
+(replace ``mamba`` with ``conda`` if using Conda)
 
-You can then access the dashboard on *[localhost:8050](http://localhost:8050)*. If somehow you ever want to deploy this to the internet yourself, do not forward port 8050 directly to the internet; you can follow [these instructions](https://dash.plotly.com/deployment) on the Dash documentation website to avoid potential vulnerabilities, although there are many other ways to deploy it. (see e.g. [this article](https://medium.com/@ahossack07/create-and-deploy-plotly-dash-apps-to-the-internet-for-free-49ebca9633da))
+### Accessing the dashboard
+Once running, you can access the dashboard in your browser at *[localhost:8050](http://localhost:8050)*. 
+
+*(Note: For some outdated Dash versions, it may be necessary to add the environment variable `REACT_VERSION=18.2.0` for dash-mantine-components to render correctly, though this should no longer be required on modern setups.)*
 
 ## Screenshots
 
@@ -37,21 +64,26 @@ You can then access the dashboard on *[localhost:8050](http://localhost:8050)*. 
 
 ![About](https://raw.githubusercontent.com/MarcoTamb/Phlegrean-Fields/main/screenshots/about.png)
 
-## The volcano
+## The Volcano
 
-The Phlegrean Fields caldera, spanning approximately 13 kilometers, is part of an active volcanic complex formed around 39,000 years ago following a massive eruption. The Phlegrean Fields consist of 24 craters and volcanic edifices, some of which are underwater. The most famous feature within this caldera is the Solfatara crater, which emits jets of steam and sulfurous gases, a visible reminder of the region's volatile nature. The area is characterized by its geothermal activity, hot springs, and fumaroles, making it a significant location for both scientific research and tourism. It is part of the Campanian volcanic arc, which also includes the more famous Mount Vesuvius (resposible of the eruption that destroyed Pompeii in 79 AD), about 9 km (6 miles) east of Naples. 
+Spanning approximately 13 kilometers, the caldera is part of an active volcanic complex formed around 39,000 years ago following a colossal eruption. Today, the Phlegrean Fields consist of 24 craters and volcanic edifices, some of which are submerged in the Gulf of Naples. 
 
-The last eruption happened in 1548, which deposited enough material to create a new 132m tall hill, Monte Nuovo. 
+The area is defined by its intense geothermal activity—most visibly at the Solfatara crater, where jets of steam and sulfurous gases serve as a constant reminder of the region's volatile nature. It belongs to the Campanian volcanic arc, which includes the infamous Mount Vesuvius (responsible for destroying Pompeii in 79 AD) situated just 9 km east of Naples. The caldera's last major eruption occurred in 1538, lasting eight days and depositing enough material to create an entirely new 132-meter hill, Monte Nuovo.
 
-It is potentially the most dangerous volcano in Europe due to the size of past eruptions and the number of people who would be affected. 
-More than half a million people live in the area of the caldera designated as "Red area", i.e. the area that would be immediately dangerous in the case of an eruption, and that would need to be evacuated beforehand. 
-Further 840 thousand people live in the "Yellow area", the area that might be affected by an eruption, who may also be forced to evatuate after the eruption has started. A larger eruption than what than the current evacuation plan anticipates may impact even more people. 
+Because of the sheer scale of its past eruptions and the dense population surrounding it, Campi Flegrei is considered one of Europe's most hazardous volcanoes. 
+
+Over half a million people live inside the caldera's "Red Zone"—the area at highest risk of pyroclastic flows, which would require preemptive evacuation in the event of an eruption. Another 840,000 people reside in the "Yellow Zone," which could be subjected to heavy ashfall and forced evacuations. An eruption larger than what current models anticipate could impact an even wider area.
 
 ## Bradyseism
 
-Bradyseism is a geological phenomenon associated with gradual ground uplift or subsidence in volcanic areas, particularly notable in the Phlegrean Fields. This phenomenon is caused by the movement of magma and volcanic gases beneath the Earth's crust, leading to deformation of the ground surface. Bradyseism is categorized into two types: positive bradyseism, where the ground rises, and negative bradyseism, where it subsides. In the Phlegrean Fields, episodes of bradyseism have been recorded since ancient times, with significant events in the 1970s and 1980s causing the ground to rise by several meters. Monitoring bradyseism is crucial for understanding the behavior of the volcano and predicting potential eruptions.
+The defining geological characteristic of Campi Flegrei is **bradyseism**. Deriving from the ancient Greek words *bradús* ("slow") and *seismós* ("movement"), bradyseism is the gradual uplift or subsidence of the Earth's surface. 
 
-This phenomena can persist for millennia in between eruptions, and each uplift event is normally accompanied by thousands of small to moderate earthquakes.
-The word derives from the ancient Greek words βραδύς bradús, meaning "slow", and σεισμός seismós meaning "movement". 
+This deformation is driven by the movement of magma and hydrothermal fluids deep beneath the crust. During phases of positive bradyseism, pressure builds and the ground swells upward; during negative bradyseism, the ground slowly sinks. These cycles can persist for millennia between actual eruptions, and upward swelling phases are almost always accompanied by swarms of small to moderate earthquakes as the crust fractures under stress. In recent history, severe bradyseismic crises in the 1970s and 1980s caused the ground in the port town of Pozzuoli to rise by several meters, forcing mass relocations.
 
-The inflation and deflation of this caldera is especially well documented due to its seaside location and a long history of habitation and construction in the area. The town of Pozzuoli features the Roman Macellum of Pozzuoli in which three marble columns show bands of boreholes left by marine Lithophaga molluscs. These occur up to 7 metres up the columns, showing how bradyseism in the area lowered the land to at least this depth under the sea and subsequently raised it again. Furthermore, a number of archeological ruins can be found underwater near the town of Baia.
+The historical inflation and deflation of this caldera are exceptionally well documented, thanks to its seaside location and thousands of years of continuous human habitation. 
+
+![Macellum of Pozzuoli](https://upload.wikimedia.org/wikipedia/commons/5/52/Serapeum_%28Pozzuoli%29_-2.jpg)
+
+The most famous evidence is the Roman Macellum of Pozzuoli. Three of its standing marble columns feature distinct bands of holes bored by marine molluscs up to 7 meters above the base. This proves that negative bradyseism once lowered the Roman ruins deep beneath the sea, before a subsequent phase of uplift pushed them back above the water line. Similarly, extensive archaeological ruins, including paved roads and statues, now sit completely submerged off the coast of nearby Baia due to these shifting ground levels.
+
+This dashboard tracks the seismic tremors associated with this ongoing uplift cycle, pulling data from INGV (updated every hour) to provide a clear view of the volcano's current activity.

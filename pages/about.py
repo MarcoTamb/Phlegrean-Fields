@@ -15,7 +15,7 @@ The area is defined by its intense geothermal activity—most visibly at the Sol
 
 markdown_text_2 = '''Because of the sheer scale of its past eruptions and the dense population surrounding it, Campi Flegrei is considered one of Europe's most hazardous volcanoes. 
 
-Over half a million people live inside the caldera's "Red Zone"—the area at highest risk of pyroclastic flows, which would require preemptive evacuation in the event of an eruption. Another 840,000 people reside in the "Yellow Zone," which could be subjected to heavy ashfall and forced evacuations. A larger eruption than current models anticipate could impact an even wider area.
+Over half a million people live inside the caldera's "Red Zone"—the area at highest risk of pyroclastic flows, which would require preemptive evacuation in the event of an eruption. Another 840,000 people reside in the "Yellow Zone," which could be subjected to heavy ashfall and forced evacuations. An eruption larger than what current models anticipate could impact an even wider area.
 
 #### Bradyseism
 
