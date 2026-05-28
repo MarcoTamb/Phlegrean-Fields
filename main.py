@@ -3,6 +3,7 @@ from utils.constants import APP_TITLE
 import dash_mantine_components as dmc
 import dash_bootstrap_components as dbc
 from dash import Dash
+from utils.cache import cache
 
 stylesheets = [
     # "https://unpkg.com/@mantine/dates@7/styles.css",
@@ -14,16 +15,18 @@ stylesheets = [
     dbc.themes.DARKLY
 ]
 
-app=Dash(__name__, external_stylesheets=stylesheets, use_pages=True)
+app = Dash(__name__, external_stylesheets=stylesheets, use_pages=True)
 
+# Initialize the cache
+cache.init_app(app.server)
 
-app.layout=dmc.MantineProvider(
-    theme = {},
-    children = app_layout 
+app.layout = dmc.MantineProvider(
+    theme={},
+    children=app_layout
 )
 app.title = APP_TITLE
-server=app.server
+server = app.server
 
 if __name__ == '__main__':
     print('Running app')
-    app.run(debug=False)
+    app.run(debug=True)

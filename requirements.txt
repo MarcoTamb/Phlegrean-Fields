@@ -6,3 +6,4 @@ pandas
 geopy
 scikit-image
 gunicorn
+Flask-Caching

@@ -1,7 +1,7 @@
 from dash import dcc, html, callback, Output, Input
 import plotly.express as px
 import pandas as pd
-from utils.data import earthquake_data, LATITUDE, LONGITUDE
+from utils.data import get_earthquake_data, LATITUDE, LONGITUDE
 from utils.constants import MIN_DATE
 import plotly.graph_objects as go
 import numpy as np
@@ -90,12 +90,15 @@ stats_wrapper = html.Div(
 def update_chart(chart_type, min_magnitudo, last_date_slider, depth, refresh_data):
     first_date=(date.today() - MIN_DATE ) + timedelta(days=last_date_slider[0])
     last_date=(date.today() - MIN_DATE ) + timedelta(days=last_date_slider[1])
-    chart_data = earthquake_data.copy()
-    chart_data = chart_data[chart_data.Magnitude > min_magnitudo]
-    chart_data = chart_data[chart_data.Time  > pd.to_datetime(first_date)]
-    chart_data = chart_data[chart_data.Time  <= pd.to_datetime(last_date)]
-    chart_data = chart_data[chart_data['Depth/Km']  > depth[0]]
-    chart_data = chart_data[chart_data['Depth/Km']  <= depth[1]]
+    chart_data = get_earthquake_data().copy()
+    mask = (
+            (chart_data['Magnitude'] > min_magnitudo) &
+            (chart_data['Time'] > pd.to_datetime(first_date)) &
+            (chart_data['Time'] <= pd.to_datetime(last_date)) &
+            (chart_data['Depth/Km'] > depth[0]) &
+            (chart_data['Depth/Km'] <= depth[1])
+    )
+    chart_data = chart_data[mask]
     
     if chart_type=='Dates':
         number_of_days=last_date_slider[1]-last_date_slider[0]
