@@ -5,7 +5,7 @@ The Phlegrean Fields, also known as Campi Flegrei, is a large volcanic area situ
 ## Tech Stack
 * **Framework:** Built entirely in Python using [Plotly Dash](https://dash.plotly.com/).
 * **Data Retrieval:** Live API scraping from INGV web services using `requests` and processed with `pandas`.
-* **Performance:** Server-side caching using `Flask-Caching` to respect API rate limits
+* **Performance:** Server-side caching using `Flask-Caching` to avoid API rate limits
 
 ## Instructions 
 
