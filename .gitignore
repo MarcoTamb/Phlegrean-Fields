@@ -1,3 +1,21 @@
-*.pyc
-.DS_Store
+# IDE and Editor folders
+.idea/
+.vscode/
+
+# Dash/Flask Cache Directory
+cache-directory/
+
+# Python Cache and Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Environment variables
 .env
+
+# OS generated files
+.DS_Store
+Thumbs.db
