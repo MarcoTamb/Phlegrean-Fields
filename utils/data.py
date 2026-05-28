@@ -32,6 +32,9 @@ def get_earthquake_data():
         data_query = requests.get(query, timeout=20)
         data_query.raise_for_status()  # Raises an error for 404, 500 status codes
         df = pd.read_csv(StringIO(data_query.text), sep='|', parse_dates=['Time'])
+        print("Success!")
+        # uncomment to update the csv file
+        # df.to_csv('query.csv', sep='|', index=False)
     except Exception as e:
         print(f"INGV API fetch failed: {e}")  # print exception in log
         df = pd.read_csv('query.csv', sep='|', parse_dates=['Time'])
