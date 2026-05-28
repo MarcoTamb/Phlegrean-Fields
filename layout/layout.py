@@ -66,3 +66,10 @@ app_layout = html.Div(
     )
 
 
+@callback(
+    Output('refresh', 'data'),
+    Input('update-data', 'n_intervals')
+)
+def trigger_refresh(interval):
+    # updates data when necessary
+    return interval

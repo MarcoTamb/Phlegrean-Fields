@@ -1,7 +1,7 @@
 from dash import dcc, html, callback, Output, Input, ctx, State
 import plotly.express as px
 import pandas as pd
-from utils.data import earthquake_data, LATITUDE, LONGITUDE
+from utils.data import get_earthquake_data, LATITUDE, LONGITUDE
 from utils.constants import MIN_DATE
 import plotly.graph_objects as go
 import numpy as np
@@ -78,7 +78,6 @@ chart_wrapper = html.Div(
 )
 
 
-
 @callback(
     Output(component_id='3d-chart', component_property='figure' ),
     Input(component_id='map-type', component_property='value'),
@@ -87,17 +86,20 @@ chart_wrapper = html.Div(
     Input(component_id='depth-km', component_property='value'),
     Input('refresh', 'data'),
 )
-def update_chart(chart_type, min_magnitudo, last_date_slider, depth, refresh_data):
+def update_chart(chart_type, min_magnitude, last_date_slider, depth, refresh_data):
     first_date=(date.today() - MIN_DATE ) + timedelta(days=last_date_slider[0])
     last_date=(datetime.now() - MIN_DATE ) + timedelta(days=last_date_slider[1])
-    chart_data = earthquake_data.copy()
-    chart_data = chart_data[chart_data.Magnitude > min_magnitudo]
-    chart_data = chart_data[chart_data.Time  > pd.to_datetime(first_date)]
-    chart_data = chart_data[chart_data.Time  <= pd.to_datetime(last_date)]
-    chart_data = chart_data[chart_data['Depth/Km']  > depth[0]]
-    chart_data = chart_data[chart_data['Depth/Km']  <= depth[1]]
+    chart_data = get_earthquake_data().copy()
+    mask = (
+            (chart_data['Magnitude'] > min_magnitude) &
+            (chart_data['Time'] > pd.to_datetime(first_date)) &
+            (chart_data['Time'] <= pd.to_datetime(last_date)) &
+            (chart_data['Depth/Km'] > depth[0]) &
+            (chart_data['Depth/Km'] <= depth[1])
+    )
+    chart_data = chart_data[mask]
     
-    if chart_type=='3D-Map':
+    if chart_type == '3D-Map':
         chart = three_d_chart(chart_data)
         chart.update_layout(
             uirevision='true',
@@ -109,7 +111,7 @@ def update_chart(chart_type, min_magnitudo, last_date_slider, depth, refresh_dat
             'plot_bgcolor': 'rgba(0, 0, 0, 0)',
             'paper_bgcolor': 'rgba(0, 0, 0, 0)',
         })
-    elif chart_type=='Heatmap':
+    elif chart_type == 'Heatmap':
         chart = heatmap(chart_data)
         chart.update_layout(
             uirevision='true',
